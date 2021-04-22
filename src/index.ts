@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import yargs from "yargs";
 import { createReadme } from "./commands/createReadme";
 import { createTest } from "./commands/createTest";
