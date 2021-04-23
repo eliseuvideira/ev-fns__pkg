@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
+import figlet from "figlet";
+import clear from "clear";
 import yargs from "yargs";
 import { createReadme } from "./commands/createReadme";
 import { createTest } from "./commands/createTest";
 import { withPrettyError } from "./functions/withPrettyError";
+
+clear();
+
+console.log(figlet.textSync("@ev-fns/pkg", { horizontalLayout: "full" }));
 
 yargs
   .command(
