@@ -6,6 +6,7 @@ import yargs from "yargs";
 import { createReadme } from "./commands/createReadme";
 import { createTest } from "./commands/createTest";
 import { withPrettyError } from "./functions/withPrettyError";
+import { createLint } from "./commands/createLint";
 
 clear();
 
@@ -37,6 +38,19 @@ yargs
       },
     },
     withPrettyError(createReadme)
+  )
+  .command(
+    "create-lint [-d directory]",
+    "adds eslint, prettier hooks to project",
+    {
+      directory: {
+        alias: "d",
+        description: "Project directory",
+        default: ".",
+        demandOption: true,
+      },
+    },
+    withPrettyError(createLint)
   )
   .demandCommand()
   .help()
